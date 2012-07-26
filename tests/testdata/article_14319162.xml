@@ -1,0 +1,747 @@
+<article id="14319162">
+	<source>
+		<uri>http://news.google.com/news?ned=us&amp;topic=t&amp;output=atom</uri>
+		<title>Sci/Tech - Google News</title>
+		<type>MAINSTREAM_NEWS</type>
+		
+		<location>
+			
+			<latitude>37.167931</latitude>
+			<longitude>-95.845016</longitude>
+			
+			
+		</location>
+		
+		<tags><tag>type:magazine</tag><tag>subtype:Computer Business</tag><tag>type:web site</tag><tag>name:BYTE</tag><tag>name:Information Week magazine</tag><tag>country:USA</tag></tags>
+	</source>
+	<uri>http://www.informationweek.com/news/windows/operatingsystems/showArticle.jhtml?articleID=212700179&amp;cid=iwhome_art_Opera_mostpop</uri>
+	
+	<retrieve-date>2008-12-31T12:14:20Z</retrieve-date>
+	<lang>eng</lang>
+	
+	
+	
+	<title>Windows 7 Leaked To The Internet</title>
+	<body>
+<item id="cea2eea7-7444-4b24-88d3-482e50b915ab">
+<metadata>
+<semantics/>
+<pipeline>
+<tool durationTimeMillis="5" time="2012-06-05T17:53:02">Text Pre-processing</tool>
+<tool durationTimeMillis="19" time="2012-06-05T17:53:02">English POS service</tool>
+<tool durationTimeMillis="77" time="2012-06-05T17:53:02">Named Entity Extraction - GATE</tool>
+<tool durationTimeMillis="0" time="2012-06-05T17:53:02">Entity Merging - Co-reference and Anaphora Resolution</tool>
+<tool durationTimeMillis="3854" time="2012-06-05T17:53:02">Stanford Constituency Parser</tool>
+</pipeline>
+</metadata>
+<text>
+<p>
+<sentence id="0">
+<plainText>Windows 7 Leaked To The Internet</plainText>
+<constituencyParse>(ROOT (NP (NP (NNP Windows) (CD 7)) (NP (NP (NNP Leaked)) (PP (TO To) (NP (DT The) (NN Internet))))))</constituencyParse>
+<tokens>
+<token end="7" id="0.0" pos="NNP" start="0">Windows</token>
+<token end="9" id="0.1" pos="CD" start="8">7</token>
+<token end="16" id="0.2" pos="NNP" start="10">Leaked</token>
+<token end="19" id="0.3" pos="TO" start="17">To</token>
+<token end="23" id="0.4" pos="DT" start="20">The</token>
+<token end="32" id="0.5" pos="NN" start="24">Internet</token>
+</tokens>
+</sentence>
+</p>
+<p>
+<sentence id="1">
+<plainText>Microsoft's next operating system is available from torrent sites.</plainText>
+<constituencyParse>(ROOT (S (NP (NP (NNP Microsoft) (POS 's)) (JJ next) (NN operating) (NN system)) (VP (VBZ is) (ADJP (JJ available) (PP (IN from) (NP (JJ torrent) (NNS sites))))) (. .)))</constituencyParse>
+<tokens>
+<token end="9" id="1.0" pos="NNP" start="0">Microsoft</token>
+<token end="11" id="1.1" pos="POS" start="9">'s</token>
+<token end="16" id="1.2" pos="JJ" start="12">next</token>
+<token end="26" id="1.3" pos="NN" start="17">operating</token>
+<token end="33" id="1.4" pos="NN" start="27">system</token>
+<token end="36" id="1.5" pos="VBZ" start="34">is</token>
+<token end="46" id="1.6" pos="JJ" start="37">available</token>
+<token end="51" id="1.7" pos="IN" start="47">from</token>
+<token end="59" id="1.8" pos="JJ" start="52">torrent</token>
+<token end="65" id="1.9" pos="NNS" start="60">sites</token>
+<token end="66" id="1.10" pos="." start="65">.</token>
+</tokens>
+</sentence>
+</p>
+<p>
+<sentence id="2">
+<plainText>A trial version of Microsoft's forthcoming Windows 7 operating system showed up on the Internet over the weekend, according to numerous blog reports.</plainText>
+<constituencyParse>(ROOT (S (NP (NP (DT A) (NN trial) (NN version)) (PP (IN of) (NP (NP (NNP Microsoft) (POS 's)) (ADJP (JJ forthcoming) (NP (NNP Windows) (CD 7))) (VBG operating) (NN system)))) (VP (VBD showed) (PRT (RP up)) (PP (IN on) (NP (DT the) (NN Internet))) (PP (IN over) (NP (DT the) (NN weekend))) (, ,) (PP (VBG according) (PP (TO to) (NP (JJ numerous) (NN blog) (NNS reports))))) (. .)))</constituencyParse>
+<tokens>
+<token end="1" id="2.0" pos="DT" start="0">A</token>
+<token end="7" id="2.1" pos="NN" start="2">trial</token>
+<token end="15" id="2.2" pos="NN" start="8">version</token>
+<token end="18" id="2.3" pos="IN" start="16">of</token>
+<token end="28" id="2.4" pos="NNP" start="19">Microsoft</token>
+<token end="30" id="2.5" pos="POS" start="28">'s</token>
+<token end="42" id="2.6" pos="JJ" start="31">forthcoming</token>
+<token end="50" id="2.7" pos="NNP" start="43">Windows</token>
+<token end="52" id="2.8" pos="CD" start="51">7</token>
+<token end="62" id="2.9" pos="NN" start="53">operating</token>
+<token end="69" id="2.10" pos="NN" start="63">system</token>
+<token end="76" id="2.11" pos="VBD" start="70">showed</token>
+<token end="79" id="2.12" pos="RP" start="77">up</token>
+<token end="82" id="2.13" pos="IN" start="80">on</token>
+<token end="86" id="2.14" pos="DT" start="83">the</token>
+<token end="95" id="2.15" pos="NNP" start="87">Internet</token>
+<token end="100" id="2.16" pos="IN" start="96">over</token>
+<token end="104" id="2.17" pos="DT" start="101">the</token>
+<token end="112" id="2.18" pos="NN" start="105">weekend</token>
+<token end="113" id="2.19" pos="," start="112">,</token>
+<token end="123" id="2.20" pos="VBG" start="114">according</token>
+<token end="126" id="2.21" pos="TO" start="124">to</token>
+<token end="135" id="2.22" pos="JJ" start="127">numerous</token>
+<token end="140" id="2.23" pos="NN" start="136">blog</token>
+<token end="148" id="2.24" pos="NNS" start="141">reports</token>
+<token end="149" id="2.25" pos="." start="148">.</token>
+</tokens>
+</sentence>
+</p>
+<p>
+<sentence id="3">
+<plainText>The beta version of the OS, reportedly Windows 7, build 7000, can be downloaded from several infamous torrent sites often used to share pirated content.</plainText>
+<constituencyParse>(ROOT (S (NP (NP (DT The) (JJ beta) (NN version)) (PP (IN of) (NP (DT the) (NNP OS)))) (, ,) (ADVP (RB reportedly)) (NP (NNP Windows) (CD 7)) (, ,) (S (VP (VB build) (NP (CD 7000)))) (, ,) (VP (MD can) (VP (VB be) (VP (VBN downloaded) (PP (IN from) (NP (NP (JJ several) (JJ infamous) (NN torrent) (NNS sites)) (VP (ADVP (RB often)) (VBN used) (PP (TO to) (NP (NP (NN share)) (VP (VBN pirated) (S (ADJP (JJ content)))))))))))) (. .)))</constituencyParse>
+<tokens>
+<token end="3" id="3.0" pos="DT" start="0">The</token>
+<token end="8" id="3.1" pos="JJ" start="4">beta</token>
+<token end="16" id="3.2" pos="NN" start="9">version</token>
+<token end="19" id="3.3" pos="IN" start="17">of</token>
+<token end="23" id="3.4" pos="DT" start="20">the</token>
+<token end="26" id="3.5" pos="NNP" start="24">OS</token>
+<token end="27" id="3.6" pos="," start="26">,</token>
+<token end="38" id="3.7" pos="RB" start="28">reportedly</token>
+<token end="46" id="3.8" pos="NNP" start="39">Windows</token>
+<token end="48" id="3.9" pos="CD" start="47">7</token>
+<token end="49" id="3.10" pos="," start="48">,</token>
+<token end="55" id="3.11" pos="VB" start="50">build</token>
+<token end="60" id="3.12" pos="CD" start="56">7000</token>
+<token end="61" id="3.13" pos="," start="60">,</token>
+<token end="65" id="3.14" pos="MD" start="62">can</token>
+<token end="68" id="3.15" pos="VB" start="66">be</token>
+<token end="79" id="3.16" pos="VBN" start="69">downloaded</token>
+<token end="84" id="3.17" pos="IN" start="80">from</token>
+<token end="92" id="3.18" pos="JJ" start="85">several</token>
+<token end="101" id="3.19" pos="JJ" start="93">infamous</token>
+<token end="109" id="3.20" pos="NN" start="102">torrent</token>
+<token end="115" id="3.21" pos="NNS" start="110">sites</token>
+<token end="121" id="3.22" pos="RB" start="116">often</token>
+<token end="126" id="3.23" pos="VBN" start="122">used</token>
+<token end="129" id="3.24" pos="TO" start="127">to</token>
+<token end="135" id="3.25" pos="VB" start="130">share</token>
+<token end="143" id="3.26" pos="JJ" start="136">pirated</token>
+<token end="151" id="3.27" pos="NN" start="144">content</token>
+<token end="152" id="3.28" pos="." start="151">.</token>
+</tokens>
+</sentence>
+</p>
+<p>
+<sentence id="4">
+<plainText>Microsoft isn't planning to officially release beta copies of Windows 7 until its MSDN developers' conference in January.</plainText>
+<constituencyParse>(ROOT (S (NP (NNP Microsoft)) (VP (VBZ is) (RB n't) (VP (VBG planning) (S (VP (TO to) (VP (ADVP (RB officially)) (VB release) (NP (NP (JJ beta) (NNS copies)) (PP (IN of) (NP (NNP Windows) (CD 7)))) (PP (IN until) (NP (NP (PRP$ its) (JJ MSDN) (NNS developers) (POS ')) (NN conference))) (PP (IN in) (NP (NNP January)))))))) (. .)))</constituencyParse>
+<tokens>
+<token end="9" id="4.0" pos="NNP" start="0">Microsoft</token>
+<token end="12" id="4.1" pos="VBZ" start="10">is</token>
+<token end="15" id="4.2" pos="RB" start="12">n't</token>
+<token end="24" id="4.3" pos="VBG" start="16">planning</token>
+<token end="27" id="4.4" pos="TO" start="25">to</token>
+<token end="38" id="4.5" pos="RB" start="28">officially</token>
+<token end="46" id="4.6" pos="VB" start="39">release</token>
+<token end="51" id="4.7" pos="JJ" start="47">beta</token>
+<token end="58" id="4.8" pos="NNS" start="52">copies</token>
+<token end="61" id="4.9" pos="IN" start="59">of</token>
+<token end="69" id="4.10" pos="NNP" start="62">Windows</token>
+<token end="71" id="4.11" pos="CD" start="70">7</token>
+<token end="77" id="4.12" pos="IN" start="72">until</token>
+<token end="81" id="4.13" pos="PRP$" start="78">its</token>
+<token end="86" id="4.14" pos="NNP" start="82">MSDN</token>
+<token end="97" id="4.15" pos="NNS" start="87">developers</token>
+<token end="98" id="4.16" pos="POS" start="97">'</token>
+<token end="109" id="4.17" pos="NN" start="99">conference</token>
+<token end="112" id="4.18" pos="IN" start="110">in</token>
+<token end="120" id="4.19" pos="NNP" start="113">January</token>
+<token end="121" id="4.20" pos="." start="120">.</token>
+</tokens>
+</sentence>
+<sentence id="5">
+<plainText>A final version of the OS isn't expected until late 2009 or early 2010.</plainText>
+<constituencyParse>(ROOT (S (NP (NP (DT A) (JJ final) (NN version)) (PP (IN of) (NP (DT the) (NNP OS)))) (VP (VBZ is) (RB n't) (VP (VBN expected) (PP (IN until) (NP (NP (RB late) (CD 2009)) (CC or) (NP (RB early) (CD 2010)))))) (. .)))</constituencyParse>
+<tokens>
+<token end="1" id="5.0" pos="DT" start="0">A</token>
+<token end="7" id="5.1" pos="JJ" start="2">final</token>
+<token end="15" id="5.2" pos="NN" start="8">version</token>
+<token end="18" id="5.3" pos="IN" start="16">of</token>
+<token end="22" id="5.4" pos="DT" start="19">the</token>
+<token end="25" id="5.5" pos="NNP" start="23">OS</token>
+<token end="28" id="5.6" pos="VBZ" start="26">is</token>
+<token end="31" id="5.7" pos="RB" start="28">n't</token>
+<token end="40" id="5.8" pos="VBN" start="32">expected</token>
+<token end="46" id="5.9" pos="IN" start="41">until</token>
+<token end="51" id="5.10" pos="JJ" start="47">late</token>
+<token end="56" id="5.11" pos="CD" start="52">2009</token>
+<token end="59" id="5.12" pos="CC" start="57">or</token>
+<token end="65" id="5.13" pos="RB" start="60">early</token>
+<token end="70" id="5.14" pos="CD" start="66">2010</token>
+<token end="71" id="5.15" pos="." start="70">.</token>
+</tokens>
+</sentence>
+</p>
+<p>
+<sentence id="6">
+<plainText>Microsoft may not be overly displeased with the leak.</plainText>
+<constituencyParse>(ROOT (S (NP (NNP Microsoft)) (VP (MD may) (RB not) (VP (VB be) (ADJP (RB overly) (JJ displeased) (PP (IN with) (NP (DT the) (NN leak)))))) (. .)))</constituencyParse>
+<tokens>
+<token end="9" id="6.0" pos="NNP" start="0">Microsoft</token>
+<token end="13" id="6.1" pos="MD" start="10">may</token>
+<token end="17" id="6.2" pos="RB" start="14">not</token>
+<token end="20" id="6.3" pos="VB" start="18">be</token>
+<token end="27" id="6.4" pos="RB" start="21">overly</token>
+<token end="38" id="6.5" pos="VBN" start="28">displeased</token>
+<token end="43" id="6.6" pos="IN" start="39">with</token>
+<token end="47" id="6.7" pos="DT" start="44">the</token>
+<token end="52" id="6.8" pos="NN" start="48">leak</token>
+<token end="53" id="6.9" pos="." start="52">.</token>
+</tokens>
+</sentence>
+</p>
+<p>
+<sentence id="7">
+<plainText>The company is urging partners to begin work on Windows 7 product development as soon as possible to avoid the sort of compatibility problems that plagued the launch of Windows Vista in January 2007.</plainText>
+<constituencyParse>(ROOT (S (NP (DT The) (NN company)) (VP (VBZ is) (VP (VBG urging) (NP (NNS partners)) (S (VP (TO to) (VP (VB begin) (NP (NN work)) (PP (IN on) (NP (NN Windows) (CD 7) (NN product) (NN development))) (ADVP (RB as) (RB soon) (PP (IN as) (ADJP (JJ possible) (S (VP (TO to) (VP (VB avoid) (NP (NP (DT the) (NN sort)) (PP (IN of) (NP (NN compatibility) (NNS problems))) (SBAR (WHNP (WDT that)) (S (VP (VBD plagued) (NP (NP (DT the) (NN launch)) (PP (IN of) (NP (NNP Windows) (NNP Vista)))) (PP (IN in) (NP (NNP January) (CD 2007)))))))))))))))))) (. .)))</constituencyParse>
+<tokens>
+<token end="3" id="7.0" pos="DT" start="0">The</token>
+<token end="11" id="7.1" pos="NN" start="4">company</token>
+<token end="14" id="7.2" pos="VBZ" start="12">is</token>
+<token end="21" id="7.3" pos="VBG" start="15">urging</token>
+<token end="30" id="7.4" pos="NNS" start="22">partners</token>
+<token end="33" id="7.5" pos="TO" start="31">to</token>
+<token end="39" id="7.6" pos="VB" start="34">begin</token>
+<token end="44" id="7.7" pos="NN" start="40">work</token>
+<token end="47" id="7.8" pos="IN" start="45">on</token>
+<token end="55" id="7.9" pos="NNP" start="48">Windows</token>
+<token end="57" id="7.10" pos="CD" start="56">7</token>
+<token end="65" id="7.11" pos="NN" start="58">product</token>
+<token end="77" id="7.12" pos="NN" start="66">development</token>
+<token end="80" id="7.13" pos="RB" start="78">as</token>
+<token end="85" id="7.14" pos="RB" start="81">soon</token>
+<token end="88" id="7.15" pos="IN" start="86">as</token>
+<token end="97" id="7.16" pos="JJ" start="89">possible</token>
+<token end="100" id="7.17" pos="TO" start="98">to</token>
+<token end="106" id="7.18" pos="VB" start="101">avoid</token>
+<token end="110" id="7.19" pos="DT" start="107">the</token>
+<token end="115" id="7.20" pos="NN" start="111">sort</token>
+<token end="118" id="7.21" pos="IN" start="116">of</token>
+<token end="132" id="7.22" pos="NN" start="119">compatibility</token>
+<token end="141" id="7.23" pos="NNS" start="133">problems</token>
+<token end="146" id="7.24" pos="WDT" start="142">that</token>
+<token end="154" id="7.25" pos="VBD" start="147">plagued</token>
+<token end="158" id="7.26" pos="DT" start="155">the</token>
+<token end="165" id="7.27" pos="NN" start="159">launch</token>
+<token end="168" id="7.28" pos="IN" start="166">of</token>
+<token end="176" id="7.29" pos="NNP" start="169">Windows</token>
+<token end="182" id="7.30" pos="NNP" start="177">Vista</token>
+<token end="185" id="7.31" pos="IN" start="183">in</token>
+<token end="193" id="7.32" pos="NNP" start="186">January</token>
+<token end="198" id="7.33" pos="CD" start="194">2007</token>
+<token end="199" id="7.34" pos="." start="198">.</token>
+</tokens>
+</sentence>
+</p>
+<p>
+<sentence id="8">
+<plainText>Earlier this month, Intel released a pre-production version of Windows 7 drivers for graphics chipsets.</plainText>
+<constituencyParse>(ROOT (S (NP (RBR Earlier) (DT this) (NN month)) (, ,) (NP (NNP Intel)) (VP (VBD released) (NP (NP (DT a) (JJ pre-production) (NN version)) (PP (IN of) (NP (NNP Windows) (CD 7) (NNS drivers)))) (PP (IN for) (NP (NNS graphics) (NNS chipsets)))) (. .)))</constituencyParse>
+<tokens>
+<token end="7" id="8.0" pos="RBR" start="0">Earlier</token>
+<token end="12" id="8.1" pos="DT" start="8">this</token>
+<token end="18" id="8.2" pos="NN" start="13">month</token>
+<token end="19" id="8.3" pos="," start="18">,</token>
+<token end="25" id="8.4" pos="NNP" start="20">Intel</token>
+<token end="34" id="8.5" pos="VBD" start="26">released</token>
+<token end="36" id="8.6" pos="DT" start="35">a</token>
+<token end="51" id="8.7" pos="JJ" start="37">pre-production</token>
+<token end="59" id="8.8" pos="NN" start="52">version</token>
+<token end="62" id="8.9" pos="IN" start="60">of</token>
+<token end="70" id="8.10" pos="NNP" start="63">Windows</token>
+<token end="72" id="8.11" pos="CD" start="71">7</token>
+<token end="80" id="8.12" pos="NNS" start="73">drivers</token>
+<token end="84" id="8.13" pos="IN" start="81">for</token>
+<token end="93" id="8.14" pos="NNS" start="85">graphics</token>
+<token end="102" id="8.15" pos="NNS" start="94">chipsets</token>
+<token end="103" id="8.16" pos="." start="102">.</token>
+</tokens>
+</sentence>
+<sentence id="9">
+<plainText>The WDDM1.1 graphics driver is designed for "enabling the full Windows 7 experience," Intel said, noting that the driver is the result of ongoing collaboration with Microsoft.</plainText>
+<constituencyParse>(ROOT (S (S (NP (DT The) (NNP WDDM1.1) (NNS graphics) (NN driver)) (VP (VBZ is) (VP (VBN designed) (PP (IN for) (S (VP (VBG "enabling) (NP (DT the) (ADJP (JJ full) (NP (NNP Windows) (CD 7))) (NN experience)))))))) (, ,) ('' ") (NP (NNP Intel)) (VP (VBD said) (, ,) (S (VP (VBG noting) (SBAR (IN that) (S (NP (DT the) (NN driver)) (VP (VBZ is) (NP (NP (DT the) (NN result)) (PP (IN of) (NP (NP (JJ ongoing) (NN collaboration)) (PP (IN with) (NP (NNP Microsoft)))))))))))) (. .)))</constituencyParse>
+<tokens>
+<token end="3" id="9.0" pos="DT" start="0">The</token>
+<token end="11" id="9.1" pos="JJ" start="4">WDDM1.1</token>
+<token end="20" id="9.2" pos="NNS" start="12">graphics</token>
+<token end="27" id="9.3" pos="NN" start="21">driver</token>
+<token end="30" id="9.4" pos="VBZ" start="28">is</token>
+<token end="39" id="9.5" pos="VBN" start="31">designed</token>
+<token end="43" id="9.6" pos="IN" start="40">for</token>
+<token end="53" id="9.7" pos="VBG" start="44">"enabling</token>
+<token end="57" id="9.8" pos="DT" start="54">the</token>
+<token end="62" id="9.9" pos="JJ" start="58">full</token>
+<token end="70" id="9.10" pos="NNS" start="63">Windows</token>
+<token end="72" id="9.11" pos="CD" start="71">7</token>
+<token end="83" id="9.12" pos="NN" start="73">experience</token>
+<token end="84" id="9.13" pos="," start="83">,</token>
+<token end="85" id="9.14" pos="''" start="84">"</token>
+<token end="91" id="9.15" pos="NNP" start="86">Intel</token>
+<token end="96" id="9.16" pos="VBD" start="92">said</token>
+<token end="97" id="9.17" pos="," start="96">,</token>
+<token end="104" id="9.18" pos="VBG" start="98">noting</token>
+<token end="109" id="9.19" pos="IN" start="105">that</token>
+<token end="113" id="9.20" pos="DT" start="110">the</token>
+<token end="120" id="9.21" pos="NN" start="114">driver</token>
+<token end="123" id="9.22" pos="VBZ" start="121">is</token>
+<token end="127" id="9.23" pos="DT" start="124">the</token>
+<token end="134" id="9.24" pos="NN" start="128">result</token>
+<token end="137" id="9.25" pos="IN" start="135">of</token>
+<token end="145" id="9.26" pos="JJ" start="138">ongoing</token>
+<token end="159" id="9.27" pos="NN" start="146">collaboration</token>
+<token end="164" id="9.28" pos="IN" start="160">with</token>
+<token end="174" id="9.29" pos="NNP" start="165">Microsoft</token>
+<token end="175" id="9.30" pos="." start="174">.</token>
+</tokens>
+</sentence>
+</p>
+<p>
+<sentence id="10">
+<plainText>Drivers allow hardware components to communicate with a computer operating system.</plainText>
+<constituencyParse>(ROOT (S (NP (NNS Drivers)) (VP (VBP allow) (S (NP (NN hardware) (NNS components)) (VP (TO to) (VP (VB communicate) (PP (IN with) (NP (DT a) (NN computer) (VBG operating) (NN system))))))) (. .)))</constituencyParse>
+<tokens>
+<token end="7" id="10.0" pos="NNS" start="0">Drivers</token>
+<token end="13" id="10.1" pos="VBP" start="8">allow</token>
+<token end="22" id="10.2" pos="NN" start="14">hardware</token>
+<token end="33" id="10.3" pos="NNS" start="23">components</token>
+<token end="36" id="10.4" pos="TO" start="34">to</token>
+<token end="48" id="10.5" pos="VB" start="37">communicate</token>
+<token end="53" id="10.6" pos="IN" start="49">with</token>
+<token end="55" id="10.7" pos="DT" start="54">a</token>
+<token end="64" id="10.8" pos="NN" start="56">computer</token>
+<token end="74" id="10.9" pos="VBG" start="65">operating</token>
+<token end="81" id="10.10" pos="NN" start="75">system</token>
+<token end="82" id="10.11" pos="." start="81">.</token>
+</tokens>
+</sentence>
+</p>
+<p>
+<sentence id="11">
+<plainText>When Vista launched in January of last year, many hardware makers -- including Intel -- didn't have fully compatible drivers ready.</plainText>
+<constituencyParse>(ROOT (S (SBAR (WHADVP (WRB When)) (S (NP (NNP Vista)) (VP (VBD launched) (PP (IN in) (NP (NP (NNP January)) (PP (IN of) (NP (JJ last) (NN year)))))))) (, ,) (NP (NP (JJ many) (NN hardware) (NNS makers)) (PRN (: --) (PP (VBG including) (NP (NNP Intel))) (: --))) (VP (VBD did) (RB n't) (VP (VB have) (NP (NP (ADJP (RB fully) (JJ compatible)) (NNS drivers)) (ADJP (JJ ready))))) (. .)))</constituencyParse>
+<tokens>
+<token end="4" id="11.0" pos="WRB" start="0">When</token>
+<token end="10" id="11.1" pos="NNP" start="5">Vista</token>
+<token end="19" id="11.2" pos="VBD" start="11">launched</token>
+<token end="22" id="11.3" pos="IN" start="20">in</token>
+<token end="30" id="11.4" pos="NNP" start="23">January</token>
+<token end="33" id="11.5" pos="IN" start="31">of</token>
+<token end="38" id="11.6" pos="JJ" start="34">last</token>
+<token end="43" id="11.7" pos="NN" start="39">year</token>
+<token end="44" id="11.8" pos="," start="43">,</token>
+<token end="49" id="11.9" pos="JJ" start="45">many</token>
+<token end="58" id="11.10" pos="NN" start="50">hardware</token>
+<token end="65" id="11.11" pos="NNS" start="59">makers</token>
+<token end="68" id="11.12" pos=":" start="66">--</token>
+<token end="78" id="11.13" pos="VBG" start="69">including</token>
+<token end="84" id="11.14" pos="NNP" start="79">Intel</token>
+<token end="87" id="11.15" pos=":" start="85">--</token>
+<token end="91" id="11.16" pos="VBD" start="88">did</token>
+<token end="94" id="11.17" pos="RB" start="91">n't</token>
+<token end="99" id="11.18" pos="VB" start="95">have</token>
+<token end="105" id="11.19" pos="RB" start="100">fully</token>
+<token end="116" id="11.20" pos="JJ" start="106">compatible</token>
+<token end="124" id="11.21" pos="NNS" start="117">drivers</token>
+<token end="130" id="11.22" pos="JJ" start="125">ready</token>
+<token end="131" id="11.23" pos="." start="130">.</token>
+</tokens>
+</sentence>
+<sentence id="12">
+<plainText>The problems marked the beginning of a slew of bad press for Vista that ultimately led many businesses and consumers to reject the operating system.</plainText>
+<constituencyParse>(ROOT (S (NP (DT The) (NNS problems)) (VP (VBD marked) (NP (NP (DT the) (NN beginning)) (PP (IN of) (NP (NP (DT a) (NN slew)) (PP (IN of) (NP (JJ bad) (NN press)))))) (PP (IN for) (NP (NP (NNP Vista)) (SBAR (WHNP (WDT that)) (S (ADVP (RB ultimately)) (VP (VBD led) (NP (JJ many) (NNS businesses) (CC and) (NNS consumers)) (S (VP (TO to) (VP (VB reject) (NP (DT the) (VBG operating) (NN system))))))))))) (. .)))</constituencyParse>
+<tokens>
+<token end="3" id="12.0" pos="DT" start="0">The</token>
+<token end="12" id="12.1" pos="NNS" start="4">problems</token>
+<token end="19" id="12.2" pos="VBD" start="13">marked</token>
+<token end="23" id="12.3" pos="DT" start="20">the</token>
+<token end="33" id="12.4" pos="NN" start="24">beginning</token>
+<token end="36" id="12.5" pos="IN" start="34">of</token>
+<token end="38" id="12.6" pos="DT" start="37">a</token>
+<token end="43" id="12.7" pos="NN" start="39">slew</token>
+<token end="46" id="12.8" pos="IN" start="44">of</token>
+<token end="50" id="12.9" pos="JJ" start="47">bad</token>
+<token end="56" id="12.10" pos="NN" start="51">press</token>
+<token end="60" id="12.11" pos="IN" start="57">for</token>
+<token end="66" id="12.12" pos="NNP" start="61">Vista</token>
+<token end="71" id="12.13" pos="WDT" start="67">that</token>
+<token end="82" id="12.14" pos="RB" start="72">ultimately</token>
+<token end="86" id="12.15" pos="VBD" start="83">led</token>
+<token end="91" id="12.16" pos="JJ" start="87">many</token>
+<token end="102" id="12.17" pos="NNS" start="92">businesses</token>
+<token end="106" id="12.18" pos="CC" start="103">and</token>
+<token end="116" id="12.19" pos="NNS" start="107">consumers</token>
+<token end="119" id="12.20" pos="TO" start="117">to</token>
+<token end="126" id="12.21" pos="VB" start="120">reject</token>
+<token end="130" id="12.22" pos="DT" start="127">the</token>
+<token end="140" id="12.23" pos="NN" start="131">operating</token>
+<token end="147" id="12.24" pos="NN" start="141">system</token>
+<token end="148" id="12.25" pos="." start="147">.</token>
+</tokens>
+</sentence>
+</p>
+<p>
+<sentence id="13">
+<plainText>To avoid a repeat of those problems, Microsoft earlier this year ordered computer and other hardware makers to begin testing their devices on Windows 7 as soon as the first beta version becomes available.</plainText>
+<constituencyParse>(ROOT (S (S (VP (TO To) (VP (VB avoid) (NP (NP (DT a) (NN repeat)) (PP (IN of) (NP (DT those) (NNS problems))))))) (, ,) (NP (NNP Microsoft)) (NP (RBR earlier) (DT this) (NN year)) (VP (VBD ordered) (NP (NN computer) (CC and) (JJ other) (NN hardware) (NNS makers)) (S (VP (TO to) (VP (VB begin) (S (VP (VBG testing) (NP (PRP$ their) (NNS devices)) (PP (IN on) (NP (NNP Windows) (CD 7))))) (ADVP (ADVP (RB as) (RB soon)) (SBAR (IN as) (S (NP (DT the) (JJ first) (NN beta) (NN version)) (VP (VBZ becomes) (ADJP (JJ available)))))))))) (. .)))</constituencyParse>
+<tokens>
+<token end="2" id="13.0" pos="TO" start="0">To</token>
+<token end="8" id="13.1" pos="VB" start="3">avoid</token>
+<token end="10" id="13.2" pos="DT" start="9">a</token>
+<token end="17" id="13.3" pos="NN" start="11">repeat</token>
+<token end="20" id="13.4" pos="IN" start="18">of</token>
+<token end="26" id="13.5" pos="DT" start="21">those</token>
+<token end="35" id="13.6" pos="NNS" start="27">problems</token>
+<token end="36" id="13.7" pos="," start="35">,</token>
+<token end="46" id="13.8" pos="NNP" start="37">Microsoft</token>
+<token end="54" id="13.9" pos="RBR" start="47">earlier</token>
+<token end="59" id="13.10" pos="DT" start="55">this</token>
+<token end="64" id="13.11" pos="NN" start="60">year</token>
+<token end="72" id="13.12" pos="VBD" start="65">ordered</token>
+<token end="81" id="13.13" pos="NN" start="73">computer</token>
+<token end="85" id="13.14" pos="CC" start="82">and</token>
+<token end="91" id="13.15" pos="JJ" start="86">other</token>
+<token end="100" id="13.16" pos="NN" start="92">hardware</token>
+<token end="107" id="13.17" pos="NNS" start="101">makers</token>
+<token end="110" id="13.18" pos="TO" start="108">to</token>
+<token end="116" id="13.19" pos="VB" start="111">begin</token>
+<token end="124" id="13.20" pos="VBG" start="117">testing</token>
+<token end="130" id="13.21" pos="PRP$" start="125">their</token>
+<token end="138" id="13.22" pos="NNS" start="131">devices</token>
+<token end="141" id="13.23" pos="IN" start="139">on</token>
+<token end="149" id="13.24" pos="NNP" start="142">Windows</token>
+<token end="151" id="13.25" pos="CD" start="150">7</token>
+<token end="154" id="13.26" pos="RB" start="152">as</token>
+<token end="159" id="13.27" pos="RB" start="155">soon</token>
+<token end="162" id="13.28" pos="IN" start="160">as</token>
+<token end="166" id="13.29" pos="DT" start="163">the</token>
+<token end="172" id="13.30" pos="JJ" start="167">first</token>
+<token end="177" id="13.31" pos="JJ" start="173">beta</token>
+<token end="185" id="13.32" pos="NN" start="178">version</token>
+<token end="193" id="13.33" pos="VBZ" start="186">becomes</token>
+<token end="203" id="13.34" pos="JJ" start="194">available</token>
+<token end="204" id="13.35" pos="." start="203">.</token>
+</tokens>
+</sentence>
+</p>
+<p>
+<sentence id="14">
+<plainText>Microsoft for the first time unveiled Windows 7 features at its Los Angeles Professional Developers Conference in October and appears anxious to release the OS as soon as possible.</plainText>
+<constituencyParse>(ROOT (S (NP (NP (NNP Microsoft)) (PP (IN for) (NP (DT the) (JJ first) (NN time)))) (VP (VP (VBD unveiled) (NP (NNP Windows) (CD 7) (NNS features)) (PP (IN at) (NP (PRP$ its) (NNP Los) (NNP Angeles) (NNP Professional) (NNP Developers) (NNP Conference))) (PP (IN in) (NP (NNP October)))) (CC and) (VP (VBZ appears) (ADJP (JJ anxious) (S (VP (TO to) (VP (VB release) (NP (DT the) (NNP OS)) (ADVP (ADVP (RB as) (RB soon)) (PP (IN as) (ADJP (JJ possible)))))))))) (. .)))</constituencyParse>
+<tokens>
+<token end="9" id="14.0" pos="NNP" start="0">Microsoft</token>
+<token end="13" id="14.1" pos="IN" start="10">for</token>
+<token end="17" id="14.2" pos="DT" start="14">the</token>
+<token end="23" id="14.3" pos="JJ" start="18">first</token>
+<token end="28" id="14.4" pos="NN" start="24">time</token>
+<token end="37" id="14.5" pos="VBD" start="29">unveiled</token>
+<token end="45" id="14.6" pos="NNS" start="38">Windows</token>
+<token end="47" id="14.7" pos="CD" start="46">7</token>
+<token end="56" id="14.8" pos="NNS" start="48">features</token>
+<token end="59" id="14.9" pos="IN" start="57">at</token>
+<token end="63" id="14.10" pos="PRP$" start="60">its</token>
+<token end="67" id="14.11" pos="NNP" start="64">Los</token>
+<token end="75" id="14.12" pos="NNP" start="68">Angeles</token>
+<token end="88" id="14.13" pos="NNP" start="76">Professional</token>
+<token end="99" id="14.14" pos="NNP" start="89">Developers</token>
+<token end="110" id="14.15" pos="NNP" start="100">Conference</token>
+<token end="113" id="14.16" pos="IN" start="111">in</token>
+<token end="121" id="14.17" pos="NNP" start="114">October</token>
+<token end="125" id="14.18" pos="CC" start="122">and</token>
+<token end="133" id="14.19" pos="VBZ" start="126">appears</token>
+<token end="141" id="14.20" pos="JJ" start="134">anxious</token>
+<token end="144" id="14.21" pos="TO" start="142">to</token>
+<token end="152" id="14.22" pos="VB" start="145">release</token>
+<token end="156" id="14.23" pos="DT" start="153">the</token>
+<token end="159" id="14.24" pos="NNP" start="157">OS</token>
+<token end="162" id="14.25" pos="RB" start="160">as</token>
+<token end="167" id="14.26" pos="RB" start="163">soon</token>
+<token end="170" id="14.27" pos="IN" start="168">as</token>
+<token end="179" id="14.28" pos="JJ" start="171">possible</token>
+<token end="180" id="14.29" pos="." start="179">.</token>
+</tokens>
+</sentence>
+<sentence id="15">
+<plainText>The company has formally said that Windows 7 won't ship until early 2010, but the January release of a beta disk is the latest sign that Windows 7 could debut in late 2009.</plainText>
+<constituencyParse>(ROOT (S (S (NP (DT The) (NN company)) (VP (VBZ has) (ADVP (RB formally)) (VP (VBN said) (SBAR (IN that) (S (NP (NNP Windows) (CD 7)) (VP (MD wo) (RB n't) (VP (VB ship) (PP (IN until) (NP (JJ early) (CD 2010)))))))))) (, ,) (CC but) (S (NP (NP (DT the) (NNP January) (NN release)) (PP (IN of) (NP (DT a) (JJ beta) (NN disk)))) (VP (VBZ is) (NP (NP (DT the) (JJS latest) (NN sign)) (SBAR (IN that) (S (NP (NNP Windows) (CD 7)) (VP (MD could) (VP (VB debut) (PP (IN in) (NP (JJ late) (CD 2009)))))))))) (. .)))</constituencyParse>
+<tokens>
+<token end="3" id="15.0" pos="DT" start="0">The</token>
+<token end="11" id="15.1" pos="NN" start="4">company</token>
+<token end="15" id="15.2" pos="VBZ" start="12">has</token>
+<token end="24" id="15.3" pos="RB" start="16">formally</token>
+<token end="29" id="15.4" pos="VBD" start="25">said</token>
+<token end="34" id="15.5" pos="IN" start="30">that</token>
+<token end="42" id="15.6" pos="NNP" start="35">Windows</token>
+<token end="44" id="15.7" pos="CD" start="43">7</token>
+<token end="47" id="15.8" pos="MD" start="45">wo</token>
+<token end="50" id="15.9" pos="RB" start="47">n't</token>
+<token end="55" id="15.10" pos="VB" start="51">ship</token>
+<token end="61" id="15.11" pos="IN" start="56">until</token>
+<token end="67" id="15.12" pos="JJ" start="62">early</token>
+<token end="72" id="15.13" pos="CD" start="68">2010</token>
+<token end="73" id="15.14" pos="," start="72">,</token>
+<token end="77" id="15.15" pos="CC" start="74">but</token>
+<token end="81" id="15.16" pos="DT" start="78">the</token>
+<token end="89" id="15.17" pos="NNP" start="82">January</token>
+<token end="97" id="15.18" pos="NN" start="90">release</token>
+<token end="100" id="15.19" pos="IN" start="98">of</token>
+<token end="102" id="15.20" pos="DT" start="101">a</token>
+<token end="107" id="15.21" pos="JJ" start="103">beta</token>
+<token end="112" id="15.22" pos="NN" start="108">disk</token>
+<token end="115" id="15.23" pos="VBZ" start="113">is</token>
+<token end="119" id="15.24" pos="DT" start="116">the</token>
+<token end="126" id="15.25" pos="JJS" start="120">latest</token>
+<token end="131" id="15.26" pos="NN" start="127">sign</token>
+<token end="136" id="15.27" pos="IN" start="132">that</token>
+<token end="144" id="15.28" pos="NNP" start="137">Windows</token>
+<token end="146" id="15.29" pos="CD" start="145">7</token>
+<token end="152" id="15.30" pos="MD" start="147">could</token>
+<token end="158" id="15.31" pos="VB" start="153">debut</token>
+<token end="161" id="15.32" pos="IN" start="159">in</token>
+<token end="166" id="15.33" pos="JJ" start="162">late</token>
+<token end="171" id="15.34" pos="CD" start="167">2009</token>
+<token end="172" id="15.35" pos="." start="171">.</token>
+</tokens>
+</sentence>
+</p>
+<p>
+<sentence id="16">
+<plainText>Microsoft is hoping Windows 7, which includes native support for touch screens, will help erase memories of Vista, which has been a disappointment for the company.</plainText>
+<constituencyParse>(ROOT (S (NP (NNP Microsoft)) (VP (VBZ is) (VP (VBG hoping) (SBAR (S (NP (NP (NNP Windows) (CD 7)) (, ,) (SBAR (WHNP (WDT which)) (S (VP (VBZ includes) (NP (NP (JJ native) (NN support)) (PP (IN for) (NP (NN touch) (NNS screens))))))) (, ,)) (VP (MD will) (VP (VB help) (NP (NP (JJ erase) (NNS memories)) (PP (IN of) (NP (NP (NNP Vista)) (, ,) (SBAR (WHNP (WDT which)) (S (VP (VBZ has) (VP (VBN been) (NP (NP (DT a) (NN disappointment)) (PP (IN for) (NP (DT the) (NN company))))))))))))))))) (. .)))</constituencyParse>
+<tokens>
+<token end="9" id="16.0" pos="NNP" start="0">Microsoft</token>
+<token end="12" id="16.1" pos="VBZ" start="10">is</token>
+<token end="19" id="16.2" pos="VBG" start="13">hoping</token>
+<token end="27" id="16.3" pos="NNP" start="20">Windows</token>
+<token end="29" id="16.4" pos="CD" start="28">7</token>
+<token end="30" id="16.5" pos="," start="29">,</token>
+<token end="36" id="16.6" pos="WDT" start="31">which</token>
+<token end="45" id="16.7" pos="VBZ" start="37">includes</token>
+<token end="52" id="16.8" pos="JJ" start="46">native</token>
+<token end="60" id="16.9" pos="NN" start="53">support</token>
+<token end="64" id="16.10" pos="IN" start="61">for</token>
+<token end="70" id="16.11" pos="NN" start="65">touch</token>
+<token end="78" id="16.12" pos="NNS" start="71">screens</token>
+<token end="79" id="16.13" pos="," start="78">,</token>
+<token end="84" id="16.14" pos="MD" start="80">will</token>
+<token end="89" id="16.15" pos="VB" start="85">help</token>
+<token end="95" id="16.16" pos="VB" start="90">erase</token>
+<token end="104" id="16.17" pos="NNS" start="96">memories</token>
+<token end="107" id="16.18" pos="IN" start="105">of</token>
+<token end="113" id="16.19" pos="NNP" start="108">Vista</token>
+<token end="114" id="16.20" pos="," start="113">,</token>
+<token end="120" id="16.21" pos="WDT" start="115">which</token>
+<token end="124" id="16.22" pos="VBZ" start="121">has</token>
+<token end="129" id="16.23" pos="VBN" start="125">been</token>
+<token end="131" id="16.24" pos="DT" start="130">a</token>
+<token end="146" id="16.25" pos="NN" start="132">disappointment</token>
+<token end="150" id="16.26" pos="IN" start="147">for</token>
+<token end="154" id="16.27" pos="DT" start="151">the</token>
+<token end="162" id="16.28" pos="NN" start="155">company</token>
+<token end="163" id="16.29" pos="." start="162">.</token>
+</tokens>
+</sentence>
+</p>
+</text>
+<annotations>
+<annotation displayName="Microsoft" id="0" type="enrycher:organization">
+<instances>
+<instance id="1" words="Microsoft">
+<token id="1.0"/>
+</instance>
+<instance id="3" words="Microsoft">
+<token id="2.4"/>
+</instance>
+<instance id="7" words="Microsoft">
+<token id="4.0"/>
+</instance>
+<instance id="15" words="Microsoft">
+<token id="6.0"/>
+</instance>
+<instance id="27" words="Microsoft">
+<token id="9.29"/>
+</instance>
+<instance id="39" words="Microsoft">
+<token id="13.8"/>
+</instance>
+<instance id="43" words="Microsoft">
+<token id="14.0"/>
+</instance>
+<instance id="55" words="Microsoft">
+<token id="16.0"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="7000" id="4" type="enrycher:date">
+<instances>
+<instance id="5" words="7000">
+<token id="3.12"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="January" id="8" type="enrycher:date">
+<instances>
+<instance id="9" words="January">
+<token id="4.19"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="2009" id="10" type="enrycher:date">
+<instances>
+<instance id="11" words="2009">
+<token id="5.11"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="2010" id="12" type="enrycher:date">
+<instances>
+<instance id="13" words="2010">
+<token id="5.14"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="Vista" id="16" type="enrycher:organization">
+<instances>
+<instance id="17" words="Vista">
+<token id="7.30"/>
+</instance>
+<instance id="29" words="Vista">
+<token id="11.1"/>
+</instance>
+<instance id="37" words="Vista">
+<token id="12.12"/>
+</instance>
+<instance id="57" words="Vista">
+<token id="16.19"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="January 2007" id="18" type="enrycher:date">
+<instances>
+<instance id="19" words="January 2007">
+<token id="7.32"/>
+<token id="7.33"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="this month" id="20" type="enrycher:date">
+<instances>
+<instance id="21" words="this month">
+<token id="8.1"/>
+<token id="8.2"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="Intel" id="22" type="enrycher:organization">
+<instances>
+<instance id="23" words="Intel">
+<token id="8.4"/>
+</instance>
+<instance id="25" words="Intel">
+<token id="9.15"/>
+</instance>
+<instance id="35" words="Intel">
+<token id="11.14"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="January" id="30" type="enrycher:date">
+<instances>
+<instance id="31" words="January">
+<token id="11.4"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="last year" id="32" type="enrycher:date">
+<instances>
+<instance id="33" words="last year">
+<token id="11.6"/>
+<token id="11.7"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="this year" id="40" type="enrycher:date">
+<instances>
+<instance id="41" words="this year">
+<token id="13.10"/>
+<token id="13.11"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="October" id="46" type="enrycher:date">
+<instances>
+<instance id="47" words="October">
+<token id="14.17"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="Los Angeles Professional" id="44" type="enrycher:organization">
+<instances>
+<instance id="45" words="Los Angeles Professional">
+<token id="14.11"/>
+<token id="14.12"/>
+<token id="14.13"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="January" id="50" type="enrycher:date">
+<instances>
+<instance id="51" words="January">
+<token id="15.17"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="2010" id="48" type="enrycher:date">
+<instances>
+<instance id="49" words="2010">
+<token id="15.13"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+<annotation displayName="2009" id="52" type="enrycher:date">
+<instances>
+<instance id="53" words="2009">
+<token id="15.34"/>
+</instance>
+</instances>
+<semantics/>
+</annotation>
+</annotations>
+<assertions/>
+</item>
+</body>
+</article>
+

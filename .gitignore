@@ -1,0 +1,23 @@
+# VIM
+*~
+.*.swp
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Compiled proto files
+*.pb.h
+*.pb.cc
+
+# Compiled tests
+*_test
