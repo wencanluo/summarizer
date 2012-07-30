@@ -24,21 +24,20 @@ bool Summarizer::Init(const vector<string>& collection,
 }
 
 bool Summarizer::Summarize(const vector<string>& collection,
-                           const SummarizerOptions& options,
-                           const Query& query,
+                           const SummaryOptions& options,
                            string* summary) {
   Document article;
 
   // Check that summary length is specified
-  if (!options.has_summary_length()) {
+  if (!options.has_length()) {
     last_error_message_ = "SummarizerOptions does not contain summary length.";
     return false;
   }
 
   // Check that summary length is in correct units. Only tokens and sentences
   // are supported.
-  if (options.summary_length().unit() != SummaryLength::TOKEN &&
-      options.summary_length().unit() != SummaryLength::SENTENCE) {
+  if (options.length().unit() != SummaryLength::TOKEN &&
+      options.length().unit() != SummaryLength::SENTENCE) {
     last_error_message_ = "This summarizer only supports TOKEN and SENTENCE "
                           "as summary length unit.";
     return false;
@@ -60,15 +59,15 @@ bool Summarizer::Summarize(const vector<string>& collection,
   // Create summary.
   // Just takes sentences from the beginning of the article.
   int used_units = 0;
-  int limit = options.summary_length().length();
+  int limit = options.length().length();
   int sentence_i = 0;
   while (sentence_i < article.sentence_size()) {
     int sentence_units;
 
     // Compute how many units will current sentence take
-    if (options.summary_length().unit() == SummaryLength::TOKEN) {
+    if (options.length().unit() == SummaryLength::TOKEN) {
       sentence_units = article.sentence(sentence_i).token_size();
-    } else if (options.summary_length().unit() == SummaryLength::SENTENCE) {
+    } else if (options.length().unit() == SummaryLength::SENTENCE) {
       sentence_units = 1;
     }
 

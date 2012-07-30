@@ -22,8 +22,20 @@ package topicsum;
 import "proto/document.proto";
 import "proto/distribution.proto";
 
+// Weighted term, used in query
+message WeightedTerm {
+  optional string name = 1;
+  optional double weight = 2;
+}
+
+// Search point entities
+message Query {
+  repeated WeightedTerm searchpoint_entity = 1;
+  repeated WeightedTerm polarity_term = 2;
+}
+
 // Summarizer options, currently only used by the Java-based summarizer.
-// Next Id: 7
+// Next Id: 8
 message SummaryOptions {
   // Summary length.
   optional SummaryLength length = 1;
@@ -40,6 +52,8 @@ message SummaryOptions {
   optional topicsum.Document doc_query = 5;
 
   optional string summarizer_name = 6;
+
+  optional Query query = 7;
 }
 
 // Summary length can be defined w.r.t. characters, tokens or sentences.
@@ -146,154 +160,6 @@ message TopicSumOptions {
   optional double update_summary_mixture_weight = 7;
  }
 
-// DualSum summarizer-specific options.
-// DualSum is an extension of TopicSum intended to Update Summarization tasks.
-// (see summarizers/dualsum/dualsumgibbs.h for more information).
-// If you don't know how to set up the hyper-parameters use the default values
-// Next ID: 9
-message DualSumOptions {
-  // Gibbs sampling options.
-  optional GibbsSamplingOptions gibbs_sampling_options = 2;
-  // Hyper-parameter lambda.
-  optional string lambda = 3 [default = "0.1,1,1,1"];
-  // Hyper-parameter gamma.
-  optional string gamma = 4 [default = "50,150,50,0"];
-  // Hyper-parameter dual gamma.
-  optional string dual_gamma = 5 [default = "50,150,25,25"];
-
-  // Training collections to use for learning the topics.
-  repeated DocumentCollection training_collection = 6;
-
-  // If a background is provided, use it as the fixed background topic
-  // distribution during training.
-  optional topicsum.DistributionProto background = 7;
-
-  // Mixture weight for combining the joint distribution and the update
-  // distributions before generating the summary that approximates this mixed
-  // distribution. A value of 0 means to use only the update-specific model,
-  // and a value of 1 means to use only the joint-specific model.
-  optional double update_summary_mixture_weight = 8;
-}
-
-// SimSum summarizer-specific options.
-// The are several type of parameters using consequent ids:
-// a) simlarity metric
-// b) outside resources
-// c) summarization algorithm
-// d) postprocessing.
-// Next ID: 10-19,21-29,33-40,42
-message SimSumOptions {
-  // Distance metric used to measure the similarity between sentences.
-  enum DistanceMetric {
-    // Based on a TF-IDF vector space.
-    COSINE = 0;
-    // Based on the string edit distance.
-    STRING_EDIT_DISTANCE = 1;
-    // Based on the tree edit distance.
-    TREE_EDIT_DISTANCE = 2;
-    // Based on a word graph similarity.
-    OPINION_GRAPH = 3;
-    NUM_DISTANCE_METRICS = 4; // Must be the last enum.
-  }
-
-  optional DistanceMetric distance_metric = 1 [default = OPINION_GRAPH];
-
-  optional bool lowercase = 2 [default = true];
-  optional bool stem = 3 [default = false];
-  optional bool remove_stopwords = 4 [default = false];
-  optional bool add_negation = 5 [default = false];
-  optional bool add_possession = 6 [default = false];
-  optional bool collapse_entities = 7 [default = false];
-  optional bool collapse_dependency = 8 [default = false];
-  optional bool collapse_pos = 9 [default = false];
-
-  optional string paraphrase_corpus = 20;
-
-  optional double similarity_threshold = 31 [default = 0.3];
-  optional int32 top_similar = 32 [default = 10];
-
-  // If set, name of a sentence postprocessor to use.
-  optional string postprocessor_name = 41;
-}
-
-// Best article summarizer-specific options.
-// Next ID: 6.
-message BestArticleSumOptions {
-  // Best article selection criteria.
-  enum BestArticleCriteria {
-    // Article selected from a whitelist of publishers
-    WHITELIST = 0;
-    // Article selected with respect to the collection distribution.
-    TOPIC_MODEL = 1;
-    // Article selected with respect to the collection distribution.
-    ENTITY_TOPICALITY_MODEL = 2;
-  }
-
-  optional BestArticleCriteria criteria = 1 [default = TOPIC_MODEL];
-
-  // Regular expression for the publishers.
-  optional string publishers = 2;
-
-  // Document collection to compute the collection distribution.
-  repeated DocumentCollection training_collection = 3;
-
-  // Maximum acceptable divergence from the collection distribution to find the
-  // best article.
-  optional double divergence_threshold = 4 [default = 1e10];
-
-  // If set, name of a sentence postprocessor to use.
-  optional string postprocessor_name = 5;
-}
-
-// Options needed to relay the summarization request to an RPC server.  All the
-// other options provided in SummarizerOptions will be copied to the request.
-//
-// Next ID: 3
-message RpcSumOptions {
-  // BNS address of the RPC server.
-  required string server_bns_address = 1;
-
-  // Name of the summarizer to run in the RPC server. The options for this
-  // summarizer are expected to be in the other fields in SummarizerOptions.
-  required string summarizer_name = 2;
-
-  // Deadline for the RPC call.
-  required double deadline_seconds = 3 [default = 1];
-}
-
-// Query-related options in case of Query-based summarization need to go
-// in that message.
-// Next ID: 2
-message QueryOptions {
-  // A query to the summarizer represented as a Document.
-  optional topicsum.Document doc_query = 1;
-
-  // The mid of the entity used as a query.
-  optional string query_mid = 2;
-}
-
-// Options for the news post-processor.
-//
-// Next ID: 3
-message NewsPostProcessorOptions {
-  // Minimum length allowed to valid sentences (measured in number of words).
-  optional int32 min_sentence_length = 1;
-
-  // Maximum length allowed to valid sentences (measured in number of words).
-  optional int32 max_sentence_length = 2;
-}
-
-// Options for the entity model.
-// Next ID: 3.
-message EntityModelOptions {
-  // The name of the entity model.
-  optional string name = 1;
-
-  // Weight used to interpolate the entity model score with the
-  // score of the summarizer (weighted by 1 - interpolation_weight).
-  optional float interpolation_weight = 2;
-}
-
 // Message storing all information for the summarizer.
 // Same type of message is used for initializing the Summarizer and
 // Summarizing a specific document collection.
@@ -325,9 +191,6 @@ message SummarizerOptions {
   // attribute in the generated summary.
   optional bool generate_debug = 3 [default = false];
 
-  // Query options to be used in case of Query-based summarization.
-  optional QueryOptions query_options = 4;
-
   optional string summarizer_name = 5;
 
   // KLSum specific-options.
@@ -335,22 +198,4 @@ message SummarizerOptions {
 
   // TopicSum specific-options.
   optional TopicSumOptions topicsum_options = 12;
-
-  // DualSum specific-options.
-  optional DualSumOptions dualsum_options = 13;
-
-  // RpcSum specific options.
-  optional RpcSumOptions rpcsum_options = 14;
-
-  // SimSum specific-options.
-  optional SimSumOptions simsum_options = 15;
-
-  // BestArticleSum specific-options.
-  optional BestArticleSumOptions bestarticlesum_options = 16;
-
-  // Entity model options.
-  optional EntityModelOptions entity_model_options = 21;
-
-  // NewsPostprocessor-specific options.
-  optional NewsPostProcessorOptions news_postprocessor_options = 22;
 }

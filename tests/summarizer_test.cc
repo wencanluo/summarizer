@@ -30,15 +30,37 @@ class SummarizerTest : public ::testing::Test {
     File::ReadFileToStringOrDie(
         "tests/testdata/article_14319162.xml",
         &article_14319162_);
+
+    // Create options for summarizer.
+    TopicSumOptions* topicsum_options =
+        summarizer_options_.mutable_topicsum_options();
+    topicsum_options->set_lambda("0.1,1,1");
+    topicsum_options->set_gamma("1,5,10");
+    KLSumOptions* klsumoptions = summarizer_options_.mutable_klsum_options();
+    klsumoptions->set_optimization_strategy(KLSumOptions::GREEDY_OPTIMIZATION);
+    klsumoptions->set_redundancy_removal(false);
+    GibbsSamplingOptions* gibbsoptions =
+        topicsum_options->mutable_gibbs_sampling_options();
+    gibbsoptions->set_iterations(500);
+    gibbsoptions->set_burnin(0);
+    gibbsoptions->set_lag(100);
+    gibbsoptions->set_track_likelihood(true);
   }
 
   string article_14178836_;
   string article_14319162_;
+
+  SummarizerOptions summarizer_options_;
 };
 
 TEST_F(SummarizerTest, TestArticle1) {
-  // Create options for summarizer.
-  SummarizerOptions sum_options;
+  // Create options for summary.
+  SummaryOptions sum_options;
+
+  // Set desired summary length.
+  SummaryLength* sum_length = sum_options.mutable_length();
+  sum_length->set_unit(SummaryLength::SENTENCE);
+  sum_length->set_length(2);
 
   // Create collection containing only one article.
   vector<string> collection;
@@ -46,17 +68,12 @@ TEST_F(SummarizerTest, TestArticle1) {
 
   // Initialize summarizer with training collection and options.
   Summarizer sum;
-  sum.Init(collection, sum_options);
-
-  // Set desired summary length.
-  SummaryLength* sum_length = sum_options.mutable_summary_length();
-  sum_length->set_unit(SummaryLength::SENTENCE);
-  sum_length->set_length(2);
+  sum.Init(collection, summarizer_options_);
 
   // Sumarize collection with desired options.
   Query query;
   string summary;
-  sum.Summarize(collection, sum_options, query, &summary);
+  sum.Summarize(collection, sum_options, &summary);
 
   // Compare returned summary.
   EXPECT_EQ(
@@ -65,26 +82,26 @@ TEST_F(SummarizerTest, TestArticle1) {
 }
 
 TEST_F(SummarizerTest, TestArticle2) {
-  // Create options for summarizer.
-  SummarizerOptions sum_options;
+  // Create options for summary.
+  SummaryOptions sum_options;
+
+  // Set desired summary length.
+  SummaryLength* sum_length = sum_options.mutable_length();
+  sum_length->set_unit(SummaryLength::TOKEN);
+  sum_length->set_length(70);
 
   // Create collection containing only one article.
   vector<string> collection;
   collection.push_back(article_14178836_);
 
-  // Set desired summary length.
-  SummaryLength* sum_length = sum_options.mutable_summary_length();
-  sum_length->set_unit(SummaryLength::TOKEN);
-  sum_length->set_length(70);
-
   // Initialize summarizer with training collection and options.
   Summarizer sum;
-  sum.Init(collection, sum_options);
+  sum.Init(collection, summarizer_options_);
 
   // Sumarize collection with desired options.
   Query query;
   string summary;
-  sum.Summarize(collection, sum_options, query, &summary);
+  sum.Summarize(collection, sum_options, &summary);
 
   // Compare returned summary.
   EXPECT_EQ(

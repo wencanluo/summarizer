@@ -10,7 +10,7 @@ LIBS	  += `pkg-config --libs protobuf libxml-2.0` -l protobuf
 PROTOC     = protoc
 PFLAGS	   = --cpp_out=.
 
-PROTOS	   = proto/distribution.proto proto/document.proto proto/summarizer.proto proto/query.proto
+PROTOS	   = proto/distribution.proto proto/document.proto proto/summarizer.proto
 PROTOH	   = $(PROTOS:.proto=.pb.h)
 PROTOCC    = $(PROTOS:.proto=.pb.cc)
 PROTO_OBJ  = $(PROTOCC:.cc=.o)
