@@ -1,0 +1,4 @@
+* First version of summarizer api.
+* Summarizer described in include/summarizer.h.
+* Usage shown in tests/summarizer_test.cc.
+* Needs protobuf and libxml2 library installed.
