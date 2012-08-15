@@ -12,9 +12,6 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-// Protocol buffer for specifying summarization options like summary length,
-// summary type, etc.
-
 syntax = "proto2";
 
 package topicsum;
@@ -22,16 +19,14 @@ package topicsum;
 import "proto/document.proto";
 import "proto/distribution.proto";
 
-// Weighted term, used in query
-message WeightedTerm {
-  optional string name = 1;
-  optional double weight = 2;
-}
+// Article in xml and a list of scores.
+// Next Id: 3
+message Article {
+  // Content of the article in xml format.
+  optional string content = 1;
 
-// Search point entities
-message Query {
-  repeated WeightedTerm searchpoint_entity = 1;
-  repeated WeightedTerm polarity_term = 2;
+  // List of scores for sentences from article.
+  repeated float score = 2;
 }
 
 // Summarizer options, currently only used by the Java-based summarizer.
@@ -39,21 +34,6 @@ message Query {
 message SummaryOptions {
   // Summary length.
   optional SummaryLength length = 1;
-
-  // Types of requested summary; any combination is possible.
-  // If false, multi-document scenario is assumed.
-  optional bool single_doc = 2;
-  // If false, generic summarization scenario is assumed.
-  optional bool query_based = 3;
-  // If true, more than one DocumentCollection should be passed as input.
-  optional bool update = 4;
-
-  // A query to the summarizer represented as a Document.
-  optional topicsum.Document doc_query = 5;
-
-  optional string summarizer_name = 6;
-
-  optional Query query = 7;
 }
 
 // Summary length can be defined w.r.t. characters, tokens or sentences.
@@ -66,9 +46,6 @@ message SummaryLength {
     CHARACTER = 0;
     // Number of tokens extracted by the Tokenizer.
     TOKEN = 1;
-    // Number of white-space delimited tokens in the raw text.
-    // This will be deprecated in version 2. Please do not use in new code.
-    WORD = 2;
     // Number of sentences in the summary.
     SENTENCE = 3;
     // Number of length units.
@@ -122,9 +99,6 @@ message KLSumOptions {
 
   // If true, also use sentence positions to estimate best summary.
   optional bool sentence_position = 3 [default = false];
-
-  // If set, name of a sentence postprocessor to use.
-  optional string postprocessor_name = 4;
 }
 
 // TopicSum/DoubleTopicSum summarizer-specific options.
@@ -144,26 +118,12 @@ message TopicSumOptions {
   optional string lambda = 3 [default = "0.1,1,1"];
   // Hyper-parameters for distribution of topics in each sentence.
   optional string gamma = 4 [default = "1,5,10"];
-
-  // Training collections to use for learning the topics.
-  repeated DocumentCollection training_collection = 5;
-
-  // If a background is provided, use it as the fixed background topic
-  // distribution during training.
-  optional topicsum.DistributionProto background = 6;
-
-  // For DoubleTopicSum only.
-  // Mixture weight for combining the joint distribution and the update
-  // distributions before generating the summary that approximates this mixed
-  // distribution. A value of 0 means to use only the update-specific model,
-  // and a value of 1 means to use only the joint-specific model.
-  optional double update_summary_mixture_weight = 7;
- }
+}
 
 // Message storing all information for the summarizer.
 // Same type of message is used for initializing the Summarizer and
 // Summarizing a specific document collection.
-// Next ID: 6-10,17-20,23
+// Next ID: 7-10,17-20,23
 message SummarizerOptions {
   // The type of summary that should be produced.
   // Values are intended to be used as bitmasks so that combination are
@@ -184,18 +144,12 @@ message SummarizerOptions {
   }
   required SummaryType summary_type  = 1;
 
-  // Summary length.
-  optional SummaryLength summary_length = 2;
-
-  // True if the summarizer is expected to fill the debug_string
-  // attribute in the generated summary.
-  optional bool generate_debug = 3 [default = false];
-
-  optional string summarizer_name = 5;
-
   // KLSum specific-options.
   optional KLSumOptions klsum_options = 11;
 
   // TopicSum specific-options.
   optional TopicSumOptions topicsum_options = 12;
+
+  // Collection for summarization.
+  repeated Article article = 6;
 }

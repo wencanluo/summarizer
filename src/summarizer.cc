@@ -14,17 +14,34 @@
 
 #include "summarizer.h"
 
+#include "proto/summarizer.pb.h"
+#include "proto/document.pb.h"
 #include "xml_parser.h"
 
 namespace topicsum {
 
-bool Summarizer::Init(const vector<string>& collection,
-                      const SummarizerOptions& options) {
+bool Summarizer::Init(const SummarizerOptions& options) {
+  // Check that there is at least one document in the collection.
+  if (!options.article_size()) {
+    last_error_message_ = "Collection must contain at least one document.";
+    return false;
+  }
+
+  vector<float> scores;
+  for (int i = 0; i < options.article_size(); i++) {
+    articles_.push_back(options.article(i).content());
+
+    scores.clear();
+    for (int j = 0; j < options.article(i).score_size(); j++) {
+      scores.push_back(options.article(i).score(j));
+    }
+    scores_.push_back(scores);
+  }
+
   return true;
 }
 
-bool Summarizer::Summarize(const vector<string>& collection,
-                           const SummaryOptions& options,
+bool Summarizer::Summarize(const SummaryOptions& options,
                            string* summary) {
   Document article;
 
@@ -43,15 +60,9 @@ bool Summarizer::Summarize(const vector<string>& collection,
     return false;
   }
 
-  // Check that there is at least one document in the collection.
-  if (collection.empty()) {
-    last_error_message_ = "Collection must contain at least one document.";
-    return false;
-  }
-
   // Parse the document from xml.
   XmlParser xml_parser;
-  if (!xml_parser.ParseDocument(collection[0], &article)) {
+  if (!xml_parser.ParseDocument(articles_[0], &article)) {
     last_error_message_ = "Error occured while parsing article.";
     return false;
   }

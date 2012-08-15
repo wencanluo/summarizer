@@ -14,9 +14,8 @@
 
 #include "summarizer.h"
 
-#include "gtest/gtest.h"
-
 #include "xml_parser.h"
+#include "gtest/gtest.h"
 #include "file.h"
 
 namespace topicsum {
@@ -25,92 +24,50 @@ class SummarizerTest : public ::testing::Test {
  protected:
   SummarizerTest() {
     File::ReadFileToStringOrDie(
-        "tests/testdata/article_14178836.xml",
-        &article_14178836_);
-    File::ReadFileToStringOrDie(
         "tests/testdata/article_14319162.xml",
         &article_14319162_);
 
-    // Create options for summarizer.
     TopicSumOptions* topicsum_options =
         summarizer_options_.mutable_topicsum_options();
     topicsum_options->set_lambda("0.1,1,1");
     topicsum_options->set_gamma("1,5,10");
+
     KLSumOptions* klsumoptions = summarizer_options_.mutable_klsum_options();
     klsumoptions->set_optimization_strategy(KLSumOptions::GREEDY_OPTIMIZATION);
     klsumoptions->set_redundancy_removal(false);
+
     GibbsSamplingOptions* gibbsoptions =
         topicsum_options->mutable_gibbs_sampling_options();
     gibbsoptions->set_iterations(500);
     gibbsoptions->set_burnin(0);
     gibbsoptions->set_lag(100);
     gibbsoptions->set_track_likelihood(true);
+
+    Article *article = summarizer_options_.add_article();
+    article->set_content(article_14319162_);
   }
 
-  string article_14178836_;
   string article_14319162_;
 
   SummarizerOptions summarizer_options_;
 };
 
 TEST_F(SummarizerTest, TestArticle1) {
-  // Create options for summary.
   SummaryOptions sum_options;
 
-  // Set desired summary length.
   SummaryLength* sum_length = sum_options.mutable_length();
   sum_length->set_unit(SummaryLength::SENTENCE);
   sum_length->set_length(2);
 
-  // Create collection containing only one article.
-  vector<string> collection;
-  collection.push_back(article_14319162_);
-
-  // Initialize summarizer with training collection and options.
   Summarizer sum;
-  sum.Init(collection, summarizer_options_);
+  sum.Init(summarizer_options_);
 
-  // Sumarize collection with desired options.
-  Query query;
   string summary;
-  sum.Summarize(collection, sum_options, &summary);
+  sum.Summarize(sum_options, &summary);
 
-  // Compare returned summary.
   EXPECT_EQ(
       "Windows 7 Leaked To The Internet Microsoft's next operating system is "
       "available from torrent sites. ", summary);
-}
-
-TEST_F(SummarizerTest, TestArticle2) {
-  // Create options for summary.
-  SummaryOptions sum_options;
-
-  // Set desired summary length.
-  SummaryLength* sum_length = sum_options.mutable_length();
-  sum_length->set_unit(SummaryLength::TOKEN);
-  sum_length->set_length(70);
-
-  // Create collection containing only one article.
-  vector<string> collection;
-  collection.push_back(article_14178836_);
-
-  // Initialize summarizer with training collection and options.
-  Summarizer sum;
-  sum.Init(collection, summarizer_options_);
-
-  // Sumarize collection with desired options.
-  Query query;
-  string summary;
-  sum.Summarize(collection, sum_options, &summary);
-
-  // Compare returned summary.
-  EXPECT_EQ(
-      "Israeli strikes hit Gaza, at least 230 killed GAZA CITY, Gaza Strip "
-      "(AP) -- Israeli warplanes sent more than 100 tons of bombs crashing "
-      "down on key security installations in Hamas-ruled Gaza on Saturday, "
-      "killing more than 200 Palestinians at the launch of an open-ended "
-      "campaign mean to stop rocket and mortar attacks that have traumatized "
-      "southern Israel. ", summary);
 }
 
 }  // namespace topicsum
