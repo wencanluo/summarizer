@@ -21,7 +21,7 @@ package topicsum;
 
 // A sentence inside a document.
 //
-// Next Id: 9
+// Next Id: 10
 message Sentence {
   //Identifier for the sentence
   optional string id = 8;
@@ -36,6 +36,9 @@ message Sentence {
   // Part-of-speech tags for the tokens. If this field is populated, its length
   // has to be the same as the length of the token field.
   repeated string pos_tag = 5;
+
+  // Prior score of this sentence before summarization.
+  optional float prior_score = 9;
 
   // Score of this sentence, if it was scored to appear in a summary.
   optional float score = 3;
