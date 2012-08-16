@@ -15,9 +15,5 @@
 *.la
 *.a
 
-# Compiled proto files
-*.pb.h
-*.pb.cc
-
 # Compiled tests
 *_test

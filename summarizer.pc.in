@@ -1,0 +1,10 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: Summarizer
+Description: Google's TopicSum summarizer
+Version: @VERSION@
+Libs: -L${libdir} @SUM_CFLAGS@ @SUM_LIBS@ -lsummarizer -lprotobuf
+Cflags: -I${includedir} @SUM_CFLAGS@

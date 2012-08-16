@@ -16,8 +16,8 @@ syntax = "proto2";
 
 package topicsum;
 
-import "proto/document.proto";
-import "proto/distribution.proto";
+import "summarizer/document.proto";
+import "summarizer/distribution.proto";
 
 // Article in xml and a list of scores.
 // Next Id: 3

@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "summarizer.h"
+#include "summarizer/summarizer.h"
 
-#include "xml_parser.h"
 #include "gtest/gtest.h"
-#include "file.h"
+#include "summarizer/file.h"
+#include "summarizer/xml_parser.h"
 
 namespace topicsum {
 
@@ -24,7 +24,7 @@ class SummarizerTest : public ::testing::Test {
  protected:
   SummarizerTest() {
     File::ReadFileToStringOrDie(
-        "tests/testdata/article_14319162.xml",
+        DATADIR "testdata/article_14319162.xml",
         &article_14319162_);
 
     TopicSumOptions* topicsum_options =

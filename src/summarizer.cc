@@ -12,11 +12,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "summarizer.h"
+#include "summarizer/summarizer.h"
 
-#include "proto/summarizer.pb.h"
-#include "proto/document.pb.h"
-#include "xml_parser.h"
+#include "summarizer/summarizer.pb.h"
+#include "summarizer/document.pb.h"
+#include "summarizer/xml_parser.h"
 
 namespace topicsum {
 

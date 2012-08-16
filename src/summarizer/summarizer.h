@@ -17,8 +17,8 @@
 
 #include <vector>
 #include <string>
-#include "proto/summarizer.pb.h"
-#include "proto/document.pb.h"
+#include "summarizer/summarizer.pb.h"
+#include "summarizer/document.pb.h"
 
 namespace topicsum {
 

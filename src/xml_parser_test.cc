@@ -12,12 +12,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "xml_parser.h"
+#include "summarizer/xml_parser.h"
 
 #include <stdio.h>
 
-#include "file.h"
 #include "gtest/gtest.h"
+#include "summarizer/file.h"
 
 namespace topicsum {
 
@@ -28,32 +28,13 @@ class XmlParserTest : public ::testing::Test {
     string file;
 
     File::ReadFileToStringOrDie(
-        "tests/testdata/article_14178836.xml", &file);
-    xml_parser.ParseDocument(file, &article_14178836_);
-
-    file = "";
-    File::ReadFileToStringOrDie(
-        "tests/testdata/article_14319162.xml", &file);
+        DATADIR "testdata/article_14319162.xml", &file);
     xml_parser.ParseDocument(file, &article_14319162_);
   }
 
   Document article_14178836_;
   Document article_14319162_;
 };
-
-TEST_F(XmlParserTest, TestArticle1) {
-  EXPECT_EQ("14178836", article_14178836_.id());
-  EXPECT_EQ("Israeli strikes hit Gaza, at least 230 killed",
-           article_14178836_.title());
-  EXPECT_EQ(56, article_14178836_.sentence_size());
-  EXPECT_EQ(1285, article_14178836_.num_tokens());
-  EXPECT_EQ(9, article_14178836_.sentence(0).token_size());
-  EXPECT_EQ(55, article_14178836_.sentence(1).token_size());
-  EXPECT_EQ("At", article_14178836_.sentence(2).token(0));
-  EXPECT_EQ("IN", article_14178836_.sentence(2).pos_tag(0));
-  EXPECT_EQ("least", article_14178836_.sentence(2).token(1));
-  EXPECT_EQ("JJS", article_14178836_.sentence(2).pos_tag(1));
-}
 
 TEST_F(XmlParserTest, TestArticle2) {
   EXPECT_EQ("14319162", article_14319162_.id());

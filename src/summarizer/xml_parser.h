@@ -18,7 +18,7 @@
 #include <vector>
 #include <string>
 
-#include "proto/document.pb.h"
+#include "summarizer/document.pb.h"
 #include "libxml/parser.h"
 #include "libxml/xpath.h"
 
