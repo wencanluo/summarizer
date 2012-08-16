@@ -25,6 +25,7 @@ MAINTAINERCLEANFILES = \
   Makefile.in          \
   missing              \
   src/config.h.in      \
+  src/Makefile.in      \
   src/stamp-h1         \
   m4/ltsugar.m4        \
   m4/libtool.m4        \
