@@ -12,29 +12,20 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "summarizer/file.h"
-#include "summarizer/logging.h"
+#include "summarizer/test_postprocessor.h"
+
+#include <string>
 
 namespace topicsum {
 
-bool File::ReadFileToString(const string& name, string* output) {
-  char buffer[1024];
-  FILE* file = fopen(name.c_str(), "rb");
-  if (file == NULL) return false;
-
-  while (true) {
-    size_t n = fread(buffer, 1, sizeof(buffer), file);
-    if (n <= 0) break;
-    output->append(buffer, n);
+bool TestPostprocessor::Compress(Sentence* sentence) const {
+  // If the sentence contains a zero, remove it completely.
+  if (sentence->raw_content().find('0') != string::npos) {
+    sentence->Clear();
+    return true;
   }
 
-  int error = ferror(file);
-  if (fclose(file) != 0) return false;
-  return error == 0;
-}
-
-void File::ReadFileToStringOrDie(const string& name, string* output) {
-  CHECK(ReadFileToString(name, output)) << "Could not read: " << name;
+  return false;
 }
 
 }  // namespace topicsum

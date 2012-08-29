@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<article id="nlp/textsum/summarizers/topicsum/testdata/toycol2/d3"><title>title</title><body><item><text><p><sentence><plainText>banana fruit.</plainText><tokens><token>banana</token><token>fruit</token></tokens></sentence></p><p><sentence><plainText>the apple fruit.</plainText><tokens><token>the</token><token>apple</token><token>fruit</token></tokens></sentence></p></text></item></body></article>

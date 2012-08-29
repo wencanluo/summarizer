@@ -12,29 +12,32 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "summarizer/file.h"
+#include "summarizer/test_postprocessor.h"
+
 #include "summarizer/logging.h"
+#include "gtest/gtest.h"
 
 namespace topicsum {
 
-bool File::ReadFileToString(const string& name, string* output) {
-  char buffer[1024];
-  FILE* file = fopen(name.c_str(), "rb");
-  if (file == NULL) return false;
-
-  while (true) {
-    size_t n = fread(buffer, 1, sizeof(buffer), file);
-    if (n <= 0) break;
-    output->append(buffer, n);
-  }
-
-  int error = ferror(file);
-  if (fclose(file) != 0) return false;
-  return error == 0;
+TEST(TestPostprocessorTest, SentencesWithZeroArRemoved) {
+  TestPostprocessor postprocessor;
+  Sentence s;
+  s.set_raw_content("Is that a good move for the company 0");
+  EXPECT_TRUE(postprocessor.Compress(&s));
+  EXPECT_FALSE(s.has_raw_content());
 }
 
-void File::ReadFileToStringOrDie(const string& name, string* output) {
-  CHECK(ReadFileToString(name, output)) << "Could not read: " << name;
+TEST(TestPostprocessorTest, GoodSentencesAreUnchanged) {
+  TestPostprocessor postprocessor;
+  Sentence s;
+  s.set_raw_content("This is a good move for the company.");
+  EXPECT_FALSE(postprocessor.Compress(&s));
+  EXPECT_TRUE(s.has_raw_content());
 }
 
 }  // namespace topicsum
+
+int main(int argc, char** argv) {
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}

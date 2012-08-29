@@ -12,9 +12,10 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "xml_parser.h"
+#include "summarizer/xml_parser.h"
 
 #include <time.h>
+#include "summarizer/logging.h"
 
 namespace topicsum {
 

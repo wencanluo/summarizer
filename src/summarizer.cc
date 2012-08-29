@@ -12,74 +12,56 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "summarizer.h"
+#include "summarizer/summarizer.h"
 
-#include "xml_parser.h"
+#include "summarizer/document.pb.h"
+#include "summarizer/summarizer.pb.h"
+#include "summarizer/topicsum.h"
+#include "summarizer/xml_parser.h"
 
 namespace topicsum {
 
-bool Summarizer::Init(const vector<string>& collection,
-                      const SummarizerOptions& options) {
-  return true;
+bool TopicSummarizer::Init(const SummarizerOptions& options) {
+  XmlParser xml_parser;
+  DocumentCollection collection;
+
+  for (int i = 0; i < options.article_size(); i++) {
+    Document* doc = collection.add_document();
+    // Parse document from xml.
+    if (!xml_parser.ParseDocument(options.article(i).content(), doc)) {
+      last_error_message_ = "Error while parsing xml document";
+      return false;
+    }
+
+    // Check number of prior scores.
+    if (doc->sentence_size() != options.article(i).score_size()) {
+      last_error_message_ = "Wrong number of prior scores.";
+      return false;
+    }
+
+    // Add prior scores to sentences.
+    for (int j = 0; j < options.article(i).score_size(); j++) {
+      doc->mutable_sentence(j)->set_prior_score(options.article(i).score(j));
+    }
+  }
+
+  bool result = summarizer.Init(collection, options);
+  last_error_message_ = summarizer.last_error_message();
+  return result;
 }
 
-bool Summarizer::Summarize(const vector<string>& collection,
-                           const SummaryOptions& options,
-                           string* summary) {
-  Document article;
-
-  // Check that summary length is specified
-  if (!options.has_length()) {
-    last_error_message_ = "SummarizerOptions does not contain summary length.";
-    return false;
-  }
-
-  // Check that summary length is in correct units. Only tokens and sentences
-  // are supported.
-  if (options.length().unit() != SummaryLength::TOKEN &&
-      options.length().unit() != SummaryLength::SENTENCE) {
-    last_error_message_ = "This summarizer only supports TOKEN and SENTENCE "
-                          "as summary length unit.";
-    return false;
-  }
-
-  // Check that there is at least one document in the collection.
-  if (collection.empty()) {
-    last_error_message_ = "Collection must contain at least one document.";
-    return false;
-  }
-
-  // Parse the document from xml.
-  XmlParser xml_parser;
-  if (!xml_parser.ParseDocument(collection[0], &article)) {
-    last_error_message_ = "Error occured while parsing article.";
-    return false;
-  }
-
-  // Create summary.
-  // Just takes sentences from the beginning of the article.
-  int used_units = 0;
-  int limit = options.length().length();
-  int sentence_i = 0;
-  while (sentence_i < article.sentence_size()) {
-    int sentence_units;
-
-    // Compute how many units will current sentence take
-    if (options.length().unit() == SummaryLength::TOKEN) {
-      sentence_units = article.sentence(sentence_i).token_size();
-    } else if (options.length().unit() == SummaryLength::SENTENCE) {
-      sentence_units = 1;
+bool TopicSummarizer::Summarize(const SummaryOptions& options,
+                                string* summary) {
+  Document sum;
+  if (summarizer.Summarize(options, &sum)) {
+    for (int i = 0; i < sum.sentence_size() - 1; i++) {
+      summary->append(sum.sentence(i).raw_content());
+      summary->append(" ");
     }
-
-    // Add sentence to summary if it fits or end.
-    if (used_units + sentence_units <= limit) {
-      used_units += sentence_units;
-      summary->append(article.sentence(sentence_i).raw_content() + " ");
-    } else {
-      break;
-    }
-
-    sentence_i++;
+    summary->append(sum.sentence(sum.sentence_size() - 1).raw_content());
+  } else {
+    last_error_message_ = sum.debug_string();
+    return false;
   }
 
   return true;

@@ -1,4 +1,57 @@
-* First version of summarizer api.
-* Summarizer described in include/summarizer.h.
-* Usage shown in tests/summarizer_test.cc.
-* Needs protobuf and libxml2 library installed.
+TopicSum summarizer library
+===========================
+
+Installation
+------------
+
+To build and install TopicSum summarizer library execute the following:
+
+  $ ./configure
+  $ make
+  $ make check
+  $ make install
+
+"make install" may require superuser privileges.
+
+** Hint on install location **
+
+  By default, the package will be installed to /usr/local.  However, on many
+  platforms, /usr/local/lib is not part of LD_LIBRARY_PATH. You can add it, but
+  it may be easier to just install to /usr instead.  To do this, invoke
+  configure as follows:
+
+    ./configure --prefix=/usr
+
+  If you already built the package with a different prefix, make sure
+  to run "make clean" before building again.
+
+** Compiling dependent packages **
+
+  To compile a package that uses TopicSum, you need to pass various flags to
+  your compiler and linker. TopicSum integrates with pkg-config to manage this.
+  If you have pkg-config installed, then you can invoke it to get a list of
+  flags like so:
+
+    pkg-config --cflags summarizer         # print compiler flags
+    pkg-config --libs summarizer           # print linker flags
+    pkg-config --cflags --libs summarizer  # print both
+
+  For example:
+
+    g++ my_program.cc `pkg-config --cflags --libs summarizer`
+
+  If you are writing an autoconf-based package that uses TopicSum, you should
+  probably use the PKG_CHECK_MODULES macro in your configure script like:
+
+    PKG_CHECK_MODULES([summarizer], [summarizer])
+
+  See the pkg-config man page for more info.
+
+Usage
+-----
+
+  See examples for more information about usage.
+
+    src/example.cc
+    src/example_simple.cc
+

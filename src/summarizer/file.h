@@ -12,29 +12,29 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include "summarizer/file.h"
-#include "summarizer/logging.h"
+#ifndef SUMMARIZER_COMMON_FILE_H_
+#define SUMMARIZER_COMMON_FILE_H_
+
+#include <string>
 
 namespace topicsum {
 
-bool File::ReadFileToString(const string& name, string* output) {
-  char buffer[1024];
-  FILE* file = fopen(name.c_str(), "rb");
-  if (file == NULL) return false;
+using std::string;
 
-  while (true) {
-    size_t n = fread(buffer, 1, sizeof(buffer), file);
-    if (n <= 0) break;
-    output->append(buffer, n);
-  }
+class File {
+ public:
+  // Read an entire file to a string.  Return true if successful, false
+  // otherwise.
+  static bool ReadFileToString(const string& name, string* output);
 
-  int error = ferror(file);
-  if (fclose(file) != 0) return false;
-  return error == 0;
-}
+  // Same as above, but crash on failure
+  static void ReadFileToStringOrDie(const string& name, string* output);
 
-void File::ReadFileToStringOrDie(const string& name, string* output) {
-  CHECK(ReadFileToString(name, output)) << "Could not read: " << name;
-}
+ protected:
+  File(const File&);
+  void operator=(const File&);
+};
 
 }  // namespace topicsum
+
+#endif  // SUMMARIZER_COMMON_FILE_H_

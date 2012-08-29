@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<article id="nlp/textsum/summarizers/topicsum/testdata/toycol1/d1"><title>title</title><body><item><text><p><sentence><plainText>the apple company iphone and ipad.</plainText><tokens><token>the</token><token>apple</token><token>company</token><token>iphone</token><token>and</token><token>ipad</token></tokens></sentence></p><p><sentence><plainText>apple ipad.</plainText><tokens><token>apple</token><token>ipad</token></tokens></sentence></p></text></item></body></article>
