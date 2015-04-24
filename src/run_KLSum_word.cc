@@ -14,6 +14,7 @@
 
 // Include summarizer header.
 #include "summarizer/summarizer.h"
+#include "summarizer/xml_parser.h"
 
 #include <fstream>
 #include <iostream>
@@ -35,9 +36,23 @@ int main(int argc, char** argv) {
   string path = input;
 
   // Read collection.
-  DocumentCollection c;
-  fstream in(path.c_str(), ios::in | ios::binary);
-  CHECK(c.ParseFromIstream(&in));
+	DocumentCollection c;
+	ifstream article_file(path.c_str());
+	if (!article_file) {
+		cerr << "File not found\n";
+		return 1;
+	}
+
+	// Read file content (STL magic).
+	string article((istreambuf_iterator<char>(article_file)),
+			 istreambuf_iterator<char>());
+
+	XmlParser xml_parser;
+	Document* doc = c.add_document();
+	// Parse document from xml.
+	if (!xml_parser.ParseDocument(article, doc)) {
+		return false;
+	}
 
   // Create the summarizer.
   scoped_ptr<KLSum> summarizer(new KLSum());
