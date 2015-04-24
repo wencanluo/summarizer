@@ -26,7 +26,7 @@ using namespace topicsum;
 
 int main(int argc, char** argv) {
   // Read article.
-  ifstream article_file("testdata/article_14319162.xml");
+  ifstream article_file("src/testdata/article_14319162.xml");
   if (!article_file) {
     cerr << "File not found\n";
     return 1;

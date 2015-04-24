@@ -1,5 +1,5 @@
 lib_LIBRARIES = libsummarizer.a
-noinst_PROGRAMS = example example_simple run_KLSum_sentence run_KLSum_word
+noinst_PROGRAMS = example example_simple run_KLSum_sentence run_KLSum_word run_TopicSum_sentence run_TopicSum_word
 
 libsummarizer_a_CXXFLAGS = @SUM_CFLAGS@
 
@@ -146,3 +146,5 @@ example_SOURCES = example.cc
 run_KLSum_SOURCES = run_KLSum.cc
 run_KLSum_sentence_SOURCES = run_KLSum_sentence.cc
 run_KLSum_word_SOURCES = run_KLSum_word.cc 
+run_TopicSum_sentence_SOURCES = run_TopicSum_sentence.cc
+run_TopicSum_word_SOURCES = run_TopicSum_word.cc

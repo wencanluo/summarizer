@@ -19,7 +19,37 @@
 #include "summarizer/topicsum.h"
 #include "summarizer/xml_parser.h"
 
+#include<iostream>
+
 namespace topicsum {
+
+//bool TopicSummarizer::Init(const SummarizerOptions& options) {
+//  //XmlParser xml_parser;
+//  DocumentCollection collection;
+//
+//  for (int i = 0; i < options.article_size(); i++) {
+//	//Document* doc = collection.add_document();
+//
+//    Document doc;
+//    doc.ParseFromString(options.article(i).content());
+//    CollectionUtils::AddDocument(doc, &collection);
+//
+//    // Check number of prior scores.
+//    if (doc.sentence_size() != options.article(i).score_size()) {
+//      last_error_message_ = "Wrong number of prior scores.";
+//      return false;
+//    }
+//
+//    // Add prior scores to sentences.
+//    for (int j = 0; j < options.article(i).score_size(); j++) {
+//      doc.mutable_sentence(j)->set_prior_score(options.article(i).score(j));
+//    }
+//  }
+//
+//  bool result = summarizer.Init(collection, options);
+//  last_error_message_ = summarizer.last_error_message();
+//  return result;
+//}
 
 bool TopicSummarizer::Init(const SummarizerOptions& options) {
   XmlParser xml_parser;
