@@ -21,11 +21,18 @@
 #include <string>
 #include <vector>
 
+#include <stdio.h>
+
 using namespace std;
 using namespace topicsum;
 
 int main(int argc, char** argv) {
-  string path = DATADIR "testdata/singledoc";
+
+  string input = argv[1];
+  string output = argv[2];
+
+  //string path = DATADIR input;
+  string path = input;
 
   // Read collection.
   DocumentCollection c;
@@ -44,8 +51,8 @@ int main(int argc, char** argv) {
 
   SummaryOptions sum_options;
   SummaryLength* length = sum_options.mutable_length();
-  length->set_length(4);
-  length->set_unit(SummaryLength::SENTENCE);
+  length->set_length(30);
+  length->set_unit(SummaryLength::TOKEN);
   
   // Summarize the collection: the limit is set very high, so it should
   // include all the sentences in the original document.
@@ -53,9 +60,11 @@ int main(int argc, char** argv) {
   summarizer->Init(c, options);
   summarizer->Summarize(sum_options, &summary);
 
+  freopen(output.c_str(), "w", stdout);
   for (int i = 0; i < summary.sentence_size(); ++i) {
 	cout << summary.sentence(i).raw_content() << endl;
   }
+  fclose (stdout);
 
   return 0;
 }
